@@ -1,6 +1,6 @@
 # Guacamole
 
-This familiar recipe is the running collaboration specimen for the OSU Libraries Carpentries Git and GitHub workshop.
+This familiar recipe carries the Carpentries Git lesson into the collaboration and conflict portion of the OSU Libraries workshop.
 
 ## Ingredients
 
@@ -20,6 +20,17 @@ This familiar recipe is the running collaboration specimen for the OSU Libraries
 
 ## Workshop use
 
-Do not treat this recipe as the learning outcome. It is a small, familiar object that lets us see version-control states clearly.
+The reading list in `build-example/books.md` is the main shared BUILD artifact. This recipe remains available as the familiar Carpentries continuity object for a controlled same-line conflict.
 
-During collaboration, two partners may intentionally edit step 3 differently. Git can preserve both changes and identify the conflict, but people must decide the intended wording.
+When directed by the instructor, overlapping edits to step 3 can create the conditions for a merge conflict.
+
+Keep the states distinct:
+
+1. another collaborator pushes work;
+2. your local clone may have different work;
+3. your push can be rejected because the remote has history you do not yet have;
+4. you pull/integrate;
+5. only if Git cannot reconcile overlapping changes does it report a merge conflict;
+6. a human decides the intended content, stages the resolution, commits, and shares it.
+
+Git can preserve competing text. It cannot decide which guacamole tastes better.
