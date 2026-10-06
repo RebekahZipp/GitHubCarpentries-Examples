@@ -1,61 +1,62 @@
-# BUILD example: Books I Have Read
+# BUILD: Books I Have Read
 
-This folder is the model for the learner-owned **BUILD** repository used in the Oct. 8 workshop.
+This folder is the common BUILD artifact for the Oct. 8 workshop.
 
-The TRY repository is still for inspection and safe experimentation. Learners should create or choose a repository they can keep, then use this example to build their own reading record.
+Everyone begins from the same repository history by cloning `RebekahZipp/GitHubCarpentries-Examples`. Each clone is a complete local Git repository. Learners can make local commits independently. During class, Rebekah adds learners as collaborators so they can also push to the shared GitHub repository.
 
-## Suggested learner repository
+## Before BUILD
 
-```text
-books-i-have-read/
-├── README.md
-└── books.md
+You should be able to verify:
+
+```bash
+git status
+git remote -v
+git log --oneline
+ls build-example
+cat build-example/books.md
 ```
 
-Copy the structure and starter table into a repository you own. Do not push your personal reading work back to this teaching repository.
-
-## Starter README
-
-```markdown
-# Books I Have Read
-
-A personal reading record I can continue after the workshop.
-
-Add finished books to books.md. Commit meaningful updates so the history shows how the reading record changes over time.
-```
-
-## Starter books.md
-
-Use the `books.md` file in this example folder. Its starter rows are intentionally incomplete so there are safe changes to make during class.
-
-## Pair roles
-
-**Owner**
-- creates or chooses the BUILD repository
-- grants Collaborator access
-- identifies the repository and branch
-- pulls and reviews shared work
-
-**Collaborator**
-- accepts access
-- clones the Owner's BUILD repository
-- identifies the branch and `origin`
-- pulls before shared work
-- makes, inspects, stages, commits, reviews, and pushes a change
-
-Both partners should be able to answer:
-
-1. Whose repository is this?
-2. What role am I in?
-3. What branch am I on?
-4. What remote does this clone point to?
+Before the break, Rebekah will ask for your **GitHub username only** and send a collaborator invitation. Do not share passwords, tokens, recovery codes, or other authentication secrets.
 
 ## Working rhythm
 
 ```text
-PULL -> CHANGE -> INSPECT -> CHOOSE -> RECORD -> REVIEW -> PUSH
+PULL -> CHANGE -> INSPECT -> ADD -> COMMIT -> REVIEW -> PUSH
 ```
 
-A useful first change is to add a rating or note to one existing book, or add one book you have read.
+A typical cycle is:
 
-Git can record that a rating changed. It cannot determine whether the opinion is correct.
+```bash
+git pull origin main
+# edit build-example/books.md
+git status
+git diff
+git add build-example/books.md
+git diff --staged
+git commit -m "Add a book to reading list"
+git log --oneline
+git show HEAD
+git push origin main
+```
+
+Do not memorize the block as a magic recipe. Stop after each meaningful move and read what Git says.
+
+## Choose a meaningful change
+
+You can:
+
+- add a book you have read;
+- add a rating to an existing row; or
+- add a short note.
+
+Git can record that a rating or note changed. Git cannot decide whether the opinion is correct.
+
+## Shared history
+
+Everyone starts from the same history. Once learners make local commits, those histories can diverge.
+
+Before pushing shared work, pay attention to what GitHub may have received from another learner.
+
+**COMMITTED != PUSHED**
+
+A rejected push is not automatically a merge conflict. Read the rejection, integrate newer remote work, and only call it a conflict if Git reports that it cannot automatically reconcile overlapping changes.
