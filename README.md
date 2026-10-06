@@ -1,23 +1,33 @@
-# GitHub Carpentries Example Repository
+# GitHub Carpentries Examples
 
-**TRY repository: clone, inspect, and experiment locally.**
+This is the shared teaching repository for the OSU Libraries Git & GitHub workshop on Oct. 8, 2026.
 
-This repository supports the **TRY** parts of the OSU Libraries Git & GitHub workshop.
+The class uses one common repository so we can see the difference between a **public repository**, a **local clone**, a **local commit**, and **shared GitHub history**.
 
-During the workshop:
+## During class
 
-- **DEMO:** watch, predict, and discuss.
-- **TRY:** inspect or experiment in your own local clone of this repository.
-- **BUILD:** do meaningful work in a repository you own or share with your partner.
-- **TALK:** speak up or add a note, question, observation, or non-sensitive error message to Teams.
+- **DEMO + DO:** Rebekah makes one small move and learners make the same move, then everyone stops to read the evidence.
+- **TRY:** inspect, predict, or safely repeat a move in your local clone.
+- **BUILD:** make a meaningful change to `build-example/books.md` in your local clone.
+- **TALK:** explain what Git says, ask a question, or share an observation.
 
-You are welcome to experiment with your **local clone**. Do not push changes back to this teaching repository unless the instructor explicitly asks you to.
+The repository is public, so you can clone it without collaborator access.
 
-## Start by investigating
+Before the first learner push, Rebekah will ask for your **GitHub username only** and invite you as a collaborator. Never share a password, access token, recovery code, or other authentication secret.
 
-After cloning, do not change anything yet.
+```text
+CLONE       local copy       public access is enough
+COMMIT      local history    happens on your computer
+PUSH        shared history   GitHub write permission is required
+```
+
+## Clone and investigate
+
+Choose where you want the repository to live, then:
 
 ```bash
+git clone https://github.com/RebekahZipp/GitHubCarpentries-Examples.git
+cd GitHubCarpentries-Examples
 pwd
 git rev-parse --show-toplevel
 git status
@@ -26,48 +36,60 @@ git remote -v
 ls
 ```
 
-Ask:
+Before changing anything, ask:
 
 1. Where am I?
 2. What repository am I in?
 3. What branch am I on?
-4. What happened before I arrived?
-5. Where is this local repository connected?
-6. What can I learn from the files without changing them?
+4. What history arrived with the clone?
+5. What does `origin` point to?
+6. Is my working tree clean?
 
-## What is here?
+## BUILD: Books I Have Read
 
-- `data/library_visits.csv` — a tiny fictional dataset.
-- `notes/analysis-notes.md` — a short record of an analytical decision.
-- `output/README.md` — explains generated output.
-- `.gitignore` — gives us something literal to inspect.
-- `CITATION.cff` — a simple citation example.
-- `LICENSE` — a teaching example of explicit reuse information.
-- `TRY_PROMPTS.md` — the guided investigation used during class.
+The common class artifact is:
 
-The data are fictional and contain no patron or personal information.
+```text
+build-example/
+├── README.md
+└── books.md
+```
 
-## Practice rule
+After collaborator access is accepted, the class practices the Carpentries collaboration rhythm:
 
-If your local clone becomes confusing, stop and inspect before doing more.
+**PULL -> CHANGE -> INSPECT -> ADD -> COMMIT -> REVIEW -> PUSH**
 
-Use:
+A useful change is to add a book you have read, a rating, or a short note. Git can record the change. It cannot decide whether your opinion is correct.
 
-**EXPECT → OBSERVE → EXPLAIN → TEST → ACT → VERIFY**
+**COMMITTED != PUSHED.** A commit records history in your local clone. Push attempts to share recorded commits with GitHub.
 
-For ordinary Git work:
+## Conflict continuity: guacamole
 
-**CHANGE → INSPECT → CHOOSE → RECORD → REVIEW → SHARE**
+`guacamole.md` carries forward the familiar Carpentries example. We can use it for a deliberate same-line conflict when we need to see what Git does when it cannot reconcile overlapping changes automatically.
 
-Do not paste credentials, tokens, private project information, or personal data into this repository or Teams.
-
-
-## Workshop continuity: guacamole carries forward
-
-This TRY repository now includes `guacamole.md` so the Oct. 8 lesson can continue the same familiar object used in the earlier Carpentries Git session.
-
-Use it to inspect history and repository state before substantive work moves to BUILD. During the collaboration exercise, learner-owned repositories can carry the recipe forward through a meaningful commit, push/pull, a deliberate same-line conflict, human resolution, and history review.
+A rejected push is **not automatically a merge conflict**. A rejected push can mean GitHub has history your local clone does not yet have. A merge conflict occurs when Git cannot automatically reconcile changes during integration.
 
 **Teaching line:** Git can tell us that two versions of guacamole exist. Git cannot tell us which guacamole tastes better.
 
-**Commit-message prompt:** "Six months from now, will this message tell another person why this version exists?"
+## Repository context
+
+The repository also contains:
+
+- `.gitignore` for intentional exclusions;
+- `LICENSE` for reuse permission;
+- `CITATION.cff` for citation metadata; and
+- `TRY_PROMPTS.md` for short investigation prompts.
+
+No library dataset or library-analysis example is needed for this workshop.
+
+## Reasoning rhythms
+
+Normal work:
+
+**CHANGE -> INSPECT -> CHOOSE -> RECORD -> REVIEW -> SHARE**
+
+When something surprises you:
+
+**EXPECT -> OBSERVE -> EXPLAIN -> TEST -> ACT -> VERIFY**
+
+The commands may change. The reasoning should become familiar.
