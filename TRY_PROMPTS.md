@@ -1,6 +1,6 @@
 # TRY prompts
 
-Use these prompts after cloning the example.
+Use these prompts in your local clone before the shared BUILD.
 
 ## 1. Locate
 
@@ -9,7 +9,7 @@ pwd
 git rev-parse --show-toplevel
 ```
 
-**TALK:** What is the difference between those two answers?
+**TALK:** What is the difference between your shell location and the repository root?
 
 ## 2. Observe
 
@@ -21,39 +21,57 @@ git remote -v
 
 **TALK:** What does each command tell us that the others do not?
 
-## 3. Investigate the files
-
-Read the README, data, notes, ignore rules, license, and citation file.
-
-**TALK:** Add one observation to Teams or say it aloud.
-
-## 4. Test an ignore rule locally
-
-Create a harmless PNG-named placeholder or use an instructor-provided generated file, then inspect:
+## 3. Find the BUILD artifact
 
 ```bash
+ls
+ls build-example
+cat build-example/books.md
 git status
-git status --ignored
-git check-ignore -v PATH
 ```
 
-**TALK:** What evidence tells you why Git is ignoring the path?
+**TALK:** What meaningful change could a person make to this file?
 
-## 5. Transfer
+Do not make the change yet if the class has not reached the BUILD checkpoint.
 
-Before making substantive changes, move to your **BUILD repository**.
+## 4. Read the relationship
 
-Finish this sentence:
+```bash
+git remote -v
+```
 
-> "The example repository helped me inspect ___. My own repository is where I will build ___."
+**TALK:** Why could you clone this public repository before Rebekah invited you as a collaborator?
 
+Then ask:
 
-## Workshop continuity: guacamole carries forward
+> What will collaborator access change?
 
-This TRY repository now includes `guacamole.md` so the Oct. 8 lesson can continue the same familiar object used in the earlier Carpentries Git session.
+Expected distinction:
 
-Use it to inspect history and repository state before substantive work moves to BUILD. During the collaboration exercise, learner-owned repositories can carry the recipe forward through a meaningful commit, push/pull, a deliberate same-line conflict, human resolution, and history review.
+- public access lets you read and clone;
+- your local clone lets you make local commits;
+- collaborator write access lets your account push to the shared GitHub repository.
 
-**Teaching line:** Git can tell us that two versions of guacamole exist. Git cannot tell us which guacamole tastes better.
+## 5. BUILD after the break
 
-**Commit-message prompt:** "Six months from now, will this message tell another person why this version exists?"
+After Rebekah has collected your **GitHub username only**, invited you, and you have accepted the invitation:
+
+```text
+PULL -> CHANGE -> INSPECT -> ADD -> COMMIT -> REVIEW -> PUSH
+```
+
+Work in `build-example/books.md`.
+
+Remember:
+
+**COMMITTED != PUSHED**
+
+Never share a password, token, recovery code, or other authentication secret.
+
+## 6. When shared histories diverge
+
+Read the evidence before fixing anything.
+
+A rejected push does not necessarily mean there is a merge conflict. Pull/integrate the remote work first. If Git cannot automatically reconcile overlapping changes, then it will report a conflict and preserve the competing content for a human decision.
+
+Use `guacamole.md` when the instructor directs the controlled conflict exercise.
