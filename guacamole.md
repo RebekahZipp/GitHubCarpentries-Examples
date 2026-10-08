@@ -9,7 +9,11 @@ This familiar recipe carries the Carpentries Git lesson into the collaboration a
 - 1/4 teaspoon salt
 - 2 tablespoons finely chopped onion
 - 1 tablespoon chopped cilantro
+<<<<<<< HEAD
 - 1/2 cup homemade salsa
+=======
+-1/2 fresh salsa
+>>>>>>> 409b2ac5f4b7f8b2b6d95343f7f6c357601ea398
 
 ## Method
 
