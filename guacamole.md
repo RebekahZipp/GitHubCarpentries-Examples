@@ -7,7 +7,15 @@ This familiar recipe carries the Carpentries Git lesson into the collaboration a
 - 2 ripe avocados
 - 1 lime
 - 1/4 teaspoon salt
+<<<<<<< HEAD
 - 1/2 fresh salsa
+=======
+<<<<<<< HEAD
+- 1/2 cup homemade salsa
+=======
+-1/2 fresh salsa
+>>>>>>> 409b2ac5f4b7f8b2b6d95343f7f6c357601ea398
+>>>>>>> 6a3a7ceb343f452b66f8854fd3d3bc9449a5835d
 
 ## Method
 
