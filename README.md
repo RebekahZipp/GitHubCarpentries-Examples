@@ -4,6 +4,21 @@ This is the shared teaching repository for the OSU Libraries Git & GitHub worksh
 
 The class uses one common repository so we can see the difference between a **public repository**, a **local clone**, a **local commit**, and **shared GitHub history**.
 
+## Digital Scholarship Center: return to the local copy
+
+**Why this matters:** After a reboot Git Bash opens a shell, not automatically this repository. A GitHub HTTPS URL is not a Windows folder. **Never type `cd https://...`.**
+
+```bash
+pwd
+ls
+cd /c/Users/Carpentries
+ls
+```
+
+If `GitHubCarpentries-Examples` exists, use `cd GitHubCarpentries-Examples`, `git status`, and `git remote -v`. Clone with `git clone https://github.com/RebekahZipp/GitHubCarpentries-Examples.git` **only if the folder is absent**. `git remote -v` shows a saved address; it does not contact the network. Never reset or discard local changes as a routine recovery step.
+
+**Class activity note:** The existing `build-example/books.md` deliberately contains the ambiguous heading `Date Finished`. Do not silently fix the shared example before the class investigates it. Learners will decide why publication dates and personal completion dates require distinct columns.
+
 ## During class
 
 - **DEMO + DO:** Rebekah makes one small move and learners make the same move, then everyone stops to read the evidence.
