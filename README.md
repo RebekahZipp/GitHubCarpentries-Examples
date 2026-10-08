@@ -108,3 +108,4 @@ When something surprises you:
 **EXPECT -> OBSERVE -> EXPLAIN -> TEST -> ACT -> VERIFY**
 
 The commands may change. The reasoning should become familiar.
+Workshop: OSU Libraries Git & GitHub, Oct 8,  2026
